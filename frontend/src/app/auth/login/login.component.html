@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center align-items-center h-100">
+  <div class="col-md-4 p-1 border rounded-2 text-center">
+
+    <!-- Message d'erreur -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Onglets Login/Register -->
+    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+      <li class="nav-item m-1 rounded-5" role="presentation">
+        <button [ngClass]="{'nav-link text-light bg-dark rounded-5': true, 'border border-2 border-warning': active === 'login'}" (click)="setActiveTab('login')">
+          Login
+        </button>
+      </li>
+      <li class="nav-item m-1 rounded-5" role="presentation">
+        <button [ngClass]="{'nav-link text-light bg-dark rounded-5': true, 'border border-2 border-warning': active === 'register'}" (click)="setActiveTab('register')">
+          Register
+        </button>
+      </li>
+    </ul>
+
+    <!-- Formulaires -->
+    <div class="tab-content">
+      <!-- Formulaire de connexion -->
+      <form *ngIf="active === 'login'" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <div class="mb-4">
+          <label for="loginName">Username</label>
+          <input class="form-control" type="text" id="loginName" formControlName="login" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label for="loginPassword">Password</label>
+          <input class="form-control" type="password" id="loginPassword" formControlName="password" />
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-block mb-4">Sign in</button>
+      </form>
+
+      <!-- Formulaire d'inscription -->
+      <form *ngIf="active === 'register'" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+        <div class="mb-4">
+          <label for="firstName">First name</label>
+          <input class="form-control" type="text" id="firstName" formControlName="firstName" />
+        </div>
+        <div class="form-outline mb-4">
+          <label for="lastName">Last name</label>
+          <input class="form-control" type="text" id="lastName" formControlName="lastName" />
+        </div>
+        <div class="form-outline mb-4">
+          <label for="login">Username</label>
+          <input class="form-control" type="text" id="login" formControlName="login" />
+        </div>
+        <div class="form-outline mb-4">
+          <label for="password">Password</label>
+          <input class="form-control" type="password" id="password" formControlName="password" />
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-block mb-4">Register</button>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,7 @@
+
+#intro {
+  background-image: url("../../assets/images/bg-welcome.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+}
