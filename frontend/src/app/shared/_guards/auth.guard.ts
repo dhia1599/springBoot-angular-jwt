@@ -3,7 +3,7 @@ import {
   Router, UrlTree,
 } from '@angular/router';
 import {Injectable} from '@angular/core';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../_services/auth.service';
 import {map, Observable, of} from 'rxjs';
 
 @Injectable({
