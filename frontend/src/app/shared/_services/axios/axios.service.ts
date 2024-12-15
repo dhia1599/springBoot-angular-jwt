@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import  axios from 'axios';
-import {AuthService} from '../../auth.service';
+import {AuthService} from '../auth.service';
 
 @Injectable({
   providedIn: 'root'

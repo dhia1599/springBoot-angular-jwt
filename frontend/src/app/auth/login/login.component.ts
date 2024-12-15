@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgClass, NgIf} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AuthService} from '../../shared/auth.service';
+import {AuthService} from '../../shared/_services/auth.service';
 import {AxiosService} from '../../shared/_services/axios/axios.service';
 
 @Component({
